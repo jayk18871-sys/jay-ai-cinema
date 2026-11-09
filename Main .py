@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from movie_engine import MovieEngine
 
 app = FastAPI(title="JAY AI CINEMA X")
+
+engine = MovieEngine()
 
 class MovieRequest(BaseModel):
     title: str
@@ -18,10 +21,9 @@ def home():
 
 @app.post("/create-movie")
 def create_movie(movie: MovieRequest):
-    return {
-        "message": "Movie request received",
-        "title": movie.title,
-        "style": movie.style,
-        "duration": movie.duration,
-        "language": movie.language
-    }
+    return engine.create_movie_plan(
+        movie.title,
+        movie.style,
+        movie.duration,
+        movie.language
+    )
