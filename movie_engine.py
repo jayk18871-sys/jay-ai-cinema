@@ -1,16 +1,14 @@
-class MovieEngine:
+class Movie Engine:
 
 def_init_(self):
 
 self.name = "JAY AI CINEMA X"
 
+self.version = "1.0"
+
 def create_movie_plan(
 
-self,
-
-style="Realistic 3D",
-
-title, duration=60, language="Hindi"
+self, title, style="Realistic 3D", duration=60, language="Hindi"
 
 ):
 
@@ -18,20 +16,22 @@ if not title or duration < 1:
 
 raise ValueError("Invalid movie details")
 
-total_scenes = duration * 2
+total_seconds = duration * 60
 
-scenes = []
+scene_duration = 10
+
+total_scenes = total_seconds // scene_duration
+
+scenes =
 
 for number in range(1, total_scenes + 1):
 
 scenes.append({
 
-}) "scene_number": number, "duration_seconds": 30, "title": f"Scene (number}", "status": "Waiting for Al generation"
+}) "scene_number": number, "duration_seconds": scene_duration, "title": f"Scene (number}", "style": style, "language": language, "status": "Waiting for Al generation"
 
 return {
 
-"engine": self.name,
-
-"movie_title": title, "style": style, "duration_minutes": duration, "language": language, "total_scenes": total_scenes, "scenes": scenes, "status": "Movie Plan Created"
+"engine": self.name, "version": self.version, "movie_title": title, "style": style, "duration_minutes": duration, "language": language, "total_scenes": total_scenes, "scenes": scenes, "status": "Movie Plan Created"
 
 }
