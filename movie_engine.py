@@ -1,6 +1,6 @@
 class MovieEngine:
 
-def_init_(self):
+def__init__(self):
 
 self.name = "JAY AI CINEMA Χ"
 
