@@ -18,7 +18,7 @@ scene_duration = 10
 
 total_scenes = total_seconds // scene_duration
 
-scenes =
+scenes =[]
 
 for number in range(1, total_scenes + 1):
 
