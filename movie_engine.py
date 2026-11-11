@@ -14,7 +14,7 @@ raise ValueError("Invalid movie details")
 
 total_seconds = duration * 60
 
-scene_duration = 10
+scene_duration = 600
 
 total_scenes = total_seconds // scene_duration
 
