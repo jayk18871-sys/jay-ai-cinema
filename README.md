@@ -1,25 +1,15 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from movie_engine import MovieEngine
+# JAY AI CINEMA X V5
 
-app = FastAPI(title="JAY AI CINEMA X")
-engine = MovieEngine()
+AI Movie Generator
 
-class MovieRequest(BaseModel):
-    title: str
-    style: str = "Realistic 3D"
-    duration: int = 60
-    language: str = "Hindi"
+Features:
+- 60 Minute Movie Generation
+- 3 Generation Steps
+- 20 Minutes Per Step
+- HD 1080p Quality
+- 4K 2160p Quality
+- Realistic Human Movie Style
+- Hindi Language Support
+- MP4 Export
 
-@app.get("/")
-def home():
-    return {"name": "JAY AI CINEMA X", "status": "Online"}
-
-@app.post("/create-movie")
-def create_movie(movie: MovieRequest):
-    return engine.create_movie_plan(
-        movie.title,
-        movie.style,
-        movie.duration,
-        movie.language
-    )
+Powered by Python and AI Video API.
